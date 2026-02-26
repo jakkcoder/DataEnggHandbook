@@ -1,0 +1,14 @@
+---
+description: Push edits to GitHub after making changes
+alwaysApply: true
+---
+
+# Git Push After Edits
+
+After making any edits to this project, always push the changes to GitHub:
+
+1. Stage all changes: `git add .`
+2. Commit with a descriptive message: `git commit -m "Brief description of changes"`
+3. Push to origin: `git push`
+
+Do this in the same turn as the edits, before responding to the user.
