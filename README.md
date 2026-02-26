@@ -46,14 +46,11 @@ After a few minutes, your site will be live at:
 ```
 DataEnggHandbook/
 ├── index.html          # Homepage
-├── chapters/           # Chapter content (from data_engg_handbook)
-│   ├── chapter1.md     # Linux & Database Fundamentals
-│   ├── chapter2.md     # Keys, Scala Basics
-│   └── ...            # chapters 3–36
-├── fundamentals.html  # Core concepts
-├── pipelines.html      # Data pipeline design
-├── storage.html        # Storage & databases
-├── tools.html          # Tools & technologies
+├── chapters.html       # Chapters index (36 chapters)
+├── chapter.html        # Chapter viewer (loads markdown)
+├── chapters/           # Chapter content
+│   ├── chapter1.md
+│   └── ...             # chapters 2–36
 ├── styles.css          # Shared styles
 ├── .nojekyll           # Bypasses Jekyll (required for plain HTML)
 └── README.md
