@@ -61,8 +61,4 @@ DataEnggHandbook/
 
 ## ✏️ Adding content
 
-Edit the HTML files directly. Add new pages by:
-
-1. Creating a new `.html` file (copy from an existing page)
-2. Adding a link in the nav in `index.html` and other pages
-3. Pushing to GitHub — Pages will auto-deploy
+Edit the markdown files in `chapters/` to update chapter content. Add new chapters by creating `chapterN.md` and adding a link in `chapters.html`.
