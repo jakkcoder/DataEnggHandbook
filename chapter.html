@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter | Data Engineering Handbook</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">Data Engineering Handbook</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chapters.html">Chapters</a></li>
+        <li><a href="fundamentals.html">Fundamentals</a></li>
+        <li><a href="datasets.html">Datasets</a></li>
+        <li><a href="pipelines.html">Data Pipelines</a></li>
+        <li><a href="storage.html">Storage & Databases</a></li>
+        <li><a href="tools.html">Tools & Technologies</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <a href="chapters.html" class="back-link">← All Chapters</a>
+    
+    <article class="article-content chapter-viewer">
+      <div id="chapter-loading">Loading chapter...</div>
+      <div id="chapter-error" class="chapter-error" style="display:none">
+        <p>Chapter not found. <a href="chapters.html">Browse all chapters</a>.</p>
+      </div>
+      <div id="chapter-content" class="markdown-body" style="display:none"></div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>Data Engineering Handbook — Open source • Hosted on GitHub Pages</p>
+  </footer>
+
+  <script>
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const n = params.get('n');
+      
+      const loadingEl = document.getElementById('chapter-loading');
+      const errorEl = document.getElementById('chapter-error');
+      const contentEl = document.getElementById('chapter-content');
+
+      if (!n || n < 1 || n > 36) {
+        loadingEl.style.display = 'none';
+        errorEl.style.display = 'block';
+        return;
+      }
+
+      const url = 'chapters/chapter' + n + '.md';
+      fetch(url)
+        .then(function(res) {
+          if (!res.ok) throw new Error('Not found');
+          return res.text();
+        })
+        .then(function(md) {
+          loadingEl.style.display = 'none';
+          contentEl.style.display = 'block';
+          contentEl.innerHTML = marked.parse(md);
+          document.title = 'Chapter ' + n + ' | Data Engineering Handbook';
+        })
+        .catch(function() {
+          loadingEl.style.display = 'none';
+          errorEl.style.display = 'block';
+        });
+    })();
+  </script>
+</body>
+</html>

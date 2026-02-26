@@ -330,6 +330,102 @@ body {
   background: var(--bg-secondary);
 }
 
+/* Chapters list */
+.chapters-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.5rem;
+}
+
+.chapter-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.chapter-link:hover {
+  border-color: var(--accent);
+  background: var(--bg-secondary);
+}
+
+/* Chapter viewer (markdown rendered) */
+.chapter-viewer .markdown-body {
+  color: var(--text-secondary);
+}
+
+.chapter-viewer .markdown-body h1 {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.chapter-viewer .markdown-body h2 {
+  font-size: 1.35rem;
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.chapter-viewer .markdown-body h3 {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin-top: 1.25rem;
+}
+
+.chapter-viewer .markdown-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+.chapter-viewer .markdown-body ul,
+.chapter-viewer .markdown-body ol {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
+.chapter-viewer .markdown-body li {
+  margin-bottom: 0.35rem;
+}
+
+.chapter-viewer .markdown-body code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--bg-card);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  color: var(--accent);
+}
+
+.chapter-viewer .markdown-body pre {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.chapter-viewer .markdown-body pre code {
+  background: none;
+  padding: 0;
+  color: var(--text-primary);
+}
+
+.chapter-error p {
+  color: var(--text-secondary);
+}
+
+.chapter-error a {
+  color: var(--accent);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .nav-container {
