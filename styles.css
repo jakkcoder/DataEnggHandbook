@@ -346,28 +346,44 @@ body {
   background: var(--bg-secondary);
 }
 
-/* Chapters list */
-.chapters-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 0.5rem;
+/* Book index table */
+.index-table {
+  width: 100%;
+  max-width: 560px;
+  border-collapse: collapse;
+  font-size: 1rem;
 }
 
-.chapter-link {
-  display: block;
-  padding: 0.75rem 1rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  color: var(--text-primary);
+.index-table td {
+  padding: 0.4rem 0;
+  vertical-align: baseline;
+  border-bottom: 1px solid var(--border);
+}
+
+.index-table tr:last-child td {
+  border-bottom: none;
+}
+
+.index-table .index-num {
+  width: 2.5rem;
+  padding-right: 1rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
+}
+
+.index-table .index-num a,
+.index-table .index-title a {
+  color: inherit;
   text-decoration: none;
-  font-size: 0.95rem;
-  transition: border-color 0.2s, background 0.2s;
 }
 
-.chapter-link:hover {
-  border-color: var(--accent);
-  background: var(--bg-secondary);
+.index-table .index-title a:hover,
+.index-table .index-num a:hover {
+  color: var(--accent);
+}
+
+.index-table .index-title {
+  color: var(--text-primary);
 }
 
 /* Chapter viewer (markdown rendered) */
