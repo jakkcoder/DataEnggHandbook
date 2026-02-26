@@ -46,7 +46,11 @@ After a few minutes, your site will be live at:
 ```
 DataEnggHandbook/
 ├── index.html          # Homepage
-├── fundamentals.html   # Core concepts
+├── chapters/           # Chapter content (from data_engg_handbook)
+│   ├── chapter1.md     # Linux & Database Fundamentals
+│   ├── chapter2.md     # Keys, Scala Basics
+│   └── ...            # chapters 3–36
+├── fundamentals.html  # Core concepts
 ├── pipelines.html      # Data pipeline design
 ├── storage.html        # Storage & databases
 ├── tools.html          # Tools & technologies
