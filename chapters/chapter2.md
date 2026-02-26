@@ -214,16 +214,44 @@ a = 5645        // ✅ works
 
 ### Cardinality vs Ordinality
 
-→ **Ordinality**
+**Ordinality (minimum)** = *What is the minimum number of related records allowed?*\n
+**Cardinality (maximum)** = *What is the maximum number of related records allowed?*\n
+Think: **min..max**.
 
-* Minimum number of times an instance of an entity can be associated
-* Describes **parent side** of the relationship
-* Can be zero
+#### Example (easy): Customers and Orders
 
-→ **Cardinality**
+Tables:
 
-* Maximum number of times an instance of an entity can be associated
-* Describes **child side** of the relationship
+```text
+Customers
+customer_id | name
+1           | Asha
+2           | Ben
+3           | Chen
+
+Orders
+order_id | customer_id | amount
+101      | 1           | 25
+102      | 1           | 40
+103      | 2           | 10
+```
+
+Relationship: **Customer → Order**
+
+- **Ordinality (min) on Customer side**: can a customer have *zero* orders?
+  - If yes (common), then **Customer has 0..** orders (minimum is 0).
+  - If no (rare), then **Customer has 1..** orders (minimum is 1).
+
+- **Cardinality (max) on Customer side**: what’s the maximum orders a customer can have?
+  - Usually unlimited → **0..N** (or **1..N**).
+
+- **Order side** (typical rule): each order belongs to exactly one customer → **1..1**.
+  - Minimum 1 (must have a customer), maximum 1 (only one customer).
+
+So a common real-world constraint looks like:
+
+→ **Customer** has **0..N** Orders  
+→ **Order** belongs to **1..1** Customer
 
 ---
 
