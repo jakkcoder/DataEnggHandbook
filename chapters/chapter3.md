@@ -50,6 +50,32 @@
 
 ---
 
+### Cloud Provider Data Warehouse Services
+
+| Cloud Provider | Service Name | Key Features |
+|----------------|--------------|--------------|
+| **AWS** | Amazon Redshift | Columnar storage, SQL-based, scales to petabytes; integrates with S3, Glue, QuickSight |
+| **GCP** | BigQuery | Serverless, pay-per-query, real-time streaming; no infrastructure to manage |
+| **Azure** | Synapse Analytics | Unified analytics (warehouse + Spark); deep integration with Power BI and Azure services |
+
+---
+
+### Example: How Netflix Uses Data Warehouses
+
+Netflix runs on **AWS** and uses data warehouses (e.g., **Snowflake**, **BigQuery**, **Redshift**) for:
+
+→ **Recommendations** — Aggregates viewing history, ratings, and engagement from 200M+ users to train recommendation models (e.g., "Because you watched X")
+
+→ **Content analytics** — Tracks which shows/movies perform best by region, device, and time; guides content acquisition and production decisions
+
+→ **User behavior** — Analyzes play/pause patterns, completion rates, and churn signals to improve UX and reduce cancellations
+
+→ **A/B testing** — Stores experiment data (thumbnails, layouts, algorithms) and measures impact on engagement and retention
+
+**Typical data flow:** Streaming logs → Data Lake (S3) → ETL/ELT → Data Warehouse → BI tools & ML pipelines
+
+---
+
 ## ❓ Need for Data Warehouse
 
 - Multiple data sources → synchronization required

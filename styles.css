@@ -440,6 +440,34 @@ body {
   color: var(--text-primary);
 }
 
+.chapter-viewer .markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.chapter-viewer .markdown-body th,
+.chapter-viewer .markdown-body td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border: 1px solid var(--border);
+}
+
+.chapter-viewer .markdown-body th {
+  background: var(--bg-card);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.chapter-viewer .markdown-body td {
+  color: var(--text-secondary);
+}
+
+.chapter-viewer .markdown-body p {
+  margin-bottom: 0.75rem;
+}
+
 .chapter-error p {
   color: var(--text-secondary);
 }
