@@ -23,8 +23,20 @@
 ## ⚙️ Scala Basics
 
 ### Concurrency vs Parallelism
-- **Concurrency** → Multiple tasks in progress (context switching)
-- **Parallelism** → Multiple tasks running at the same time
+
+**Concurrency** — Multiple tasks *in progress*, but you switch between them. Only one runs at a time; the CPU quickly switches so it *feels* like many things are happening.
+
+**Parallelism** — Multiple tasks *actually running at the same time*, on different CPU cores. True simultaneous execution.
+
+#### Simple Examples
+
+| | Concurrency | Parallelism |
+|---|-------------|-------------|
+| **Cooking** | One person: start pasta boiling → chop vegetables while it cooks → stir pasta → set table. You switch between tasks. | Two people: one chops, one stirs. Both work at the same time. |
+| **Computers** | One CPU core: run Task A for 10ms, switch to Task B for 10ms, switch back. Tasks take turns. | Multiple CPU cores: Core 1 runs Task A, Core 2 runs Task B. Both run at once. |
+| **Restaurant** | One waiter serves 5 tables. Takes order at Table 1 → brings drinks to Table 2 → takes order at Table 3. One person, many tasks in progress. | Five waiters, each serving one table. All serving at the same time. |
+
+**In short:** Concurrency = *juggling* (one ball in hand, others in the air). Parallelism = *multiple hands* (multiple balls in hands at once).
 
 *(Ref: YouTube videos by Cunningham)*
 
