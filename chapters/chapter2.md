@@ -259,10 +259,34 @@ So a common real-world constraint looks like:
 
 ACID ensures **validity and reliability** of transactions.
 
-* **Atomicity** → Transaction should be **all or nothing**
-* **Consistency** → Database remains consistent before & after transaction
-* **Isolation** → Multiple transactions can occur concurrently without conflict
-* **Durability** → Data persists even if the system fails
+Think of a **transaction** as a “package of steps” that must behave safely.
+
+### Layman example: Bank transfer (₹500 from Asha → Ben)
+
+Steps inside one transaction:
+1. Deduct ₹500 from Asha
+2. Add ₹500 to Ben
+
+#### A — Atomicity (all or nothing)
+If step 1 succeeds but step 2 fails, we must **undo step 1**.\n
+So either **both happen** or **none happen** (no “money lost in between”).
+
+#### C — Consistency (rules must stay true)
+The database must never break rules like:
+- balance can’t go negative (if your system enforces that)
+- total money doesn’t randomly change
+
+After the transfer, the data must still make sense according to constraints.
+
+#### I — Isolation (transactions don’t step on each other)
+If two transfers happen at the same time, they shouldn’t interfere.\n
+Example: Asha has ₹600 and two transfers try to send ₹500 at the same time.
+- Without isolation, both might read ₹600 and both might succeed (wrong).
+- With isolation, the database ensures the result is correct (only one succeeds or they run in a safe order).
+
+#### D — Durability (once committed, it stays)
+After the transaction says “SUCCESS”, the result is saved permanently.\n
+Even if the server crashes right after, the transfer should still be there when the database comes back.
 
 ---
 
