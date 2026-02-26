@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storage & Databases | Data Engineering Handbook</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">Data Engineering Handbook</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="fundamentals.html">Fundamentals</a></li>
+        <li><a href="pipelines.html">Data Pipelines</a></li>
+        <li><a href="storage.html">Storage & Databases</a></li>
+        <li><a href="tools.html">Tools & Technologies</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <a href="index.html" class="back-link">← Back to Handbook</a>
+    
+    <article class="article-content">
+      <h1>Storage & Databases</h1>
+      <p class="meta">Choosing and optimizing data storage</p>
+
+      <h2>Data Lakes</h2>
+      <p>Store raw data in its native format (Parquet, ORC, JSON). Best for unstructured/semi-structured data, cost-effective at scale. Examples: S3, GCS, Azure Data Lake.</p>
+
+      <h2>Data Warehouses</h2>
+      <p>Optimized for analytical queries. Schema-on-read or schema-on-write. Examples: Snowflake, BigQuery, Redshift, Databricks SQL.</p>
+
+      <h2>When to Use What</h2>
+      <ul>
+        <li><strong>Data Lake</strong> — Raw ingestion, ML training data, archival</li>
+        <li><strong>Data Warehouse</strong> — BI, reporting, ad-hoc analytics</li>
+        <li><strong>OLTP Database</strong> — Transactional applications, real-time lookups</li>
+      </ul>
+
+      <h2>File Formats</h2>
+      <ul>
+        <li><strong>Parquet</strong> — Columnar, compressed; ideal for analytics</li>
+        <li><strong>ORC</strong> — Similar to Parquet; common in Hive</li>
+        <li><strong>Delta Lake / Iceberg</strong> — Table formats with ACID, time travel</li>
+      </ul>
+
+      <h2>Optimization Tips</h2>
+      <p>Partition by date or key columns, use columnar formats for analytics, and consider compaction for small files.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>Data Engineering Handbook — Open source • Hosted on GitHub Pages</p>
+  </footer>
+</body>
+</html>
