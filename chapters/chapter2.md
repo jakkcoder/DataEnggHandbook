@@ -44,6 +44,45 @@
 
 **Easy memory line:** Concurrency = *taking turns*. Parallelism = *at the same time*.
 
+#### Python examples
+
+**Concurrency (asyncio)**: tasks overlap by *waiting* (great for I/O like network calls).
+
+```python
+import asyncio
+
+async def task(name: str, seconds: int):
+    print(f"start {name}")
+    await asyncio.sleep(seconds)  # waiting (doesn't block the whole program)
+    print(f"done  {name}")
+
+async def main():
+    await asyncio.gather(
+        task("A", 2),
+        task("B", 1),
+    )
+
+asyncio.run(main())
+```
+
+**Parallelism (multiprocessing)**: tasks run on *multiple CPU cores* (good for CPU-heavy work).
+
+```python
+from multiprocessing import Process
+import time
+
+def work(name: str):
+    print(f"start {name}")
+    time.sleep(2)  # imagine heavy CPU work here
+    print(f"done  {name}")
+
+if __name__ == "__main__":
+    p1 = Process(target=work, args=("A",))
+    p2 = Process(target=work, args=("B",))
+    p1.start(); p2.start()
+    p1.join();  p2.join()
+```
+
 *(Ref: YouTube videos by Cunningham)*
 
 ---
