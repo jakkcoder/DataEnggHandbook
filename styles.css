@@ -297,6 +297,39 @@ body {
   color: var(--accent);
 }
 
+/* Comparison tables */
+.comparison-table {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+
+.comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border: 1px solid var(--border);
+}
+
+.comparison-table th {
+  background: var(--bg-card);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.comparison-table td {
+  color: var(--text-secondary);
+}
+
+.comparison-table tr:hover td {
+  background: var(--bg-secondary);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .nav-container {
