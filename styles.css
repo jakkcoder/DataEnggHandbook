@@ -354,9 +354,12 @@ body {
   font-size: 1rem;
 }
 
+.index-table tr {
+  display: table-row;
+}
+
 .index-table td {
-  padding: 0.4rem 0;
-  vertical-align: baseline;
+  padding: 0.35rem 0;
   border-bottom: 1px solid var(--border);
 }
 
@@ -364,26 +367,13 @@ body {
   border-bottom: none;
 }
 
-.index-table .index-num {
-  width: 2.5rem;
-  padding-right: 1rem;
-  font-variant-numeric: tabular-nums;
-  color: var(--text-secondary);
-}
-
-.index-table .index-num a,
-.index-table .index-title a {
-  color: inherit;
+.index-table a {
+  color: var(--text-primary);
   text-decoration: none;
 }
 
-.index-table .index-title a:hover,
-.index-table .index-num a:hover {
+.index-table a:hover {
   color: var(--accent);
-}
-
-.index-table .index-title {
-  color: var(--text-primary);
 }
 
 /* Chapter viewer (markdown rendered) */
