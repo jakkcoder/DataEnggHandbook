@@ -192,6 +192,25 @@ cat file1.txt file2.txt >> file3.txt
 * Used for **analytics & business intelligence**
 * Introduced because traditional databases were **not optimized for analytical workloads**
 
+### Cloud Data Warehouses
+
+| Cloud | Service | Example |
+|-------|---------|---------|
+| **AWS** | Amazon Redshift | Columnar, SQL-based; scales to petabytes |
+| **GCP** | BigQuery | Serverless, pay-per-query; real-time analytics |
+| **Azure** | Synapse Analytics | Integrates with Power BI; hybrid analytics |
+
+### Real-World Example: Netflix
+
+Netflix uses data warehouses (e.g., **Snowflake**, **BigQuery**) to:
+
+* **Recommendations** — Aggregate viewing history, ratings, and engagement across 200M+ users to train recommendation models
+* **Content analytics** — Track which shows/movies perform best by region, device, and time; inform content acquisition decisions
+* **User behavior** — Analyze play/pause patterns, completion rates, and churn signals to improve UX and reduce cancellations
+* **A/B testing** — Store experiment data (thumbnails, layouts, algorithms) and measure impact on engagement and retention
+
+Data flows: **Streaming logs** → **Data Lake (S3/GCS)** → **Data Warehouse** → **BI tools** & **ML pipelines**
+
 ---
 
 ## 14. MDM (Master Data Management)
