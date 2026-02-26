@@ -192,24 +192,24 @@ cat file1.txt file2.txt >> file3.txt
 * Used for **analytics & business intelligence**
 * Introduced because traditional databases were **not optimized for analytical workloads**
 
-### Cloud Data Warehouses
+### Cloud Provider Data Warehouse Services
 
-| Cloud | Service | Example |
-|-------|---------|---------|
-| **AWS** | Amazon Redshift | Columnar, SQL-based; scales to petabytes |
-| **GCP** | BigQuery | Serverless, pay-per-query; real-time analytics |
-| **Azure** | Synapse Analytics | Integrates with Power BI; hybrid analytics |
+| Cloud Provider | Service Name | Key Features |
+|----------------|--------------|--------------|
+| **AWS** | Amazon Redshift | Columnar storage, SQL-based, scales to petabytes; integrates with S3, Glue, QuickSight |
+| **GCP** | BigQuery | Serverless, pay-per-query, real-time streaming; no infrastructure to manage |
+| **Azure** | Synapse Analytics | Unified analytics (warehouse + Spark); deep integration with Power BI and Azure services |
 
-### Real-World Example: Netflix
+### Example: How Netflix Uses Data Warehouses
 
-Netflix uses data warehouses (e.g., **Snowflake**, **BigQuery**) to:
+Netflix runs on **AWS** and uses data warehouses (e.g., **Snowflake**, **BigQuery**, **Redshift**) for:
 
-* **Recommendations** — Aggregate viewing history, ratings, and engagement across 200M+ users to train recommendation models
-* **Content analytics** — Track which shows/movies perform best by region, device, and time; inform content acquisition decisions
-* **User behavior** — Analyze play/pause patterns, completion rates, and churn signals to improve UX and reduce cancellations
-* **A/B testing** — Store experiment data (thumbnails, layouts, algorithms) and measure impact on engagement and retention
+* **Recommendations** — Aggregates viewing history, ratings, and engagement from 200M+ users to train recommendation models (e.g., "Because you watched X")
+* **Content analytics** — Tracks which shows/movies perform best by region, device, and time; guides content acquisition and production decisions
+* **User behavior** — Analyzes play/pause patterns, completion rates, and churn signals to improve UX and reduce cancellations
+* **A/B testing** — Stores experiment data (thumbnails, layouts, algorithms) and measures impact on engagement and retention
 
-Data flows: **Streaming logs** → **Data Lake (S3/GCS)** → **Data Warehouse** → **BI tools** & **ML pipelines**
+**Typical data flow:** Streaming logs → Data Lake (S3) → ETL/ELT → Data Warehouse → BI tools & ML pipelines
 
 ---
 
